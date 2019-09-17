@@ -1,31 +1,38 @@
-﻿using System;
+﻿using Prism;
+using Prism.DryIoc;
+using Prism.Ioc;
+using ProjetoCondominioSmart.ViewModels;
+using ProjetoCondominioSmart.ViewModels.Popup;
+using ProjetoCondominioSmart.Views;
+using ProjetoCondominioSmart.Views.Popup;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace ProjetoCondominioSmart
 {
-    public partial class App : Application
+    public partial class App : PrismApplication
     {
-        public App()
+        public App() : this(null) { }
+      
+        public App(IPlatformInitializer initializer): this(initializer, true) { }
+      
+        public App(IPlatformInitializer initializer, bool setFormsDependencyResolver) : base(initializer, setFormsDependencyResolver) { }
+
+        protected override async void OnInitialized()
         {
             InitializeComponent();
+//#if DEBUG
+//            HotReloader.Current.Run(this);
 
-            MainPage = new MainPage();
+            await NavigationService.NavigateAsync("LoginPage");
         }
 
-        protected override void OnStart()
+        protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            // Handle when your app starts
-        }
-
-        protected override void OnSleep()
-        {
-            // Handle when your app sleeps
-        }
-
-        protected override void OnResume()
-        {
-            // Handle when your app resumes
+            containerRegistry.RegisterForNavigation<NavigationPage>();
+            containerRegistry.RegisterForNavigation<LoginPage, LoginViewModel>();
+            containerRegistry.RegisterForNavigation<TestePage, TesteViewModel>();
+            containerRegistry.RegisterForNavigation<TestePopupPage, TestePopupViewModel>();
         }
     }
 }
+
