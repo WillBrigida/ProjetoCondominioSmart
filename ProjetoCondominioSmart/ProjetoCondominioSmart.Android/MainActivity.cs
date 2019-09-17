@@ -32,7 +32,7 @@ namespace ProjetoCondominioSmart.Droid
         }
 
         public override void OnBackPressed()
-        {
+         {
             if (Rg.Plugins.Popup.Popup.SendBackPressed(base.OnBackPressed))
             {
                 App.Current.MainPage.Navigation.PopModalAsync();

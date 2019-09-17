@@ -1,6 +1,7 @@
 ﻿using Prism;
 using Prism.DryIoc;
 using Prism.Ioc;
+using Prism.Plugin.Popups;
 using ProjetoCondominioSmart.ViewModels;
 using ProjetoCondominioSmart.ViewModels.Popup;
 using ProjetoCondominioSmart.Views;
@@ -30,6 +31,8 @@ namespace ProjetoCondominioSmart
         {
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<LoginPage, LoginViewModel>();
+            containerRegistry.RegisterPopupNavigationService();
+
             containerRegistry.RegisterForNavigation<TestePage, TesteViewModel>();
             containerRegistry.RegisterForNavigation<TestePopupPage, TestePopupViewModel>();
         }
