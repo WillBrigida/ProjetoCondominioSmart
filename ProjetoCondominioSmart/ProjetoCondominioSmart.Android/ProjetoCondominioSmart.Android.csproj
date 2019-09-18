@@ -67,6 +67,9 @@
     <PackageReference Include="Prism.Plugin.Popups.DryIoc">
       <Version>2.1.0.228</Version>
     </PackageReference>
+    <PackageReference Include="Xam.Plugins.Notifier">
+      <Version>3.0.1</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.Forms" Version="4.2.0.778463" />
     <PackageReference Include="Xamarin.Android.Support.Design" Version="28.0.0.1" />
     <PackageReference Include="Xamarin.Android.Support.v7.AppCompat" Version="28.0.0.1" />
@@ -80,6 +83,7 @@
   <ItemGroup>
     <Compile Include="AndroidInitializer.cs" />
     <Compile Include="MainActivity.cs" />
+    <Compile Include="Renderes\PickerExtRenderer.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -111,13 +115,16 @@
     <Folder Include="Resources\drawable-xhdpi\" />
     <Folder Include="Resources\drawable-xxhdpi\" />
     <Folder Include="Resources\drawable-xxxhdpi\" />
-    <Folder Include="Resources\drawable\" />
+    <Folder Include="Services\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ProjetoCondominioSmart\ProjetoCondominioSmart.csproj">
       <Project>{6AA6F399-BEE9-4943-B10B-7F63B85AA530}</Project>
       <Name>ProjetoCondominioSmart</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\MOBRJ.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
