@@ -21,9 +21,9 @@ namespace ProjetoCondominioSmart
         protected override async void OnInitialized()
         {
             InitializeComponent();
-//#if DEBUG
-//            HotReloader.Current.Run(this);
-
+#if DEBUG
+            HotReloader.Current.Run(this);
+#endif
             await NavigationService.NavigateAsync("LoginPage");
         }
 
@@ -34,6 +34,7 @@ namespace ProjetoCondominioSmart
             containerRegistry.RegisterPopupNavigationService();
 
             containerRegistry.RegisterForNavigation<TestePage, TesteViewModel>();
+            containerRegistry.RegisterForNavigation<ListaTestePage, ListaTesteViewModel>();
             containerRegistry.RegisterForNavigation<TestePopupPage, TestePopupViewModel>();
         }
     }

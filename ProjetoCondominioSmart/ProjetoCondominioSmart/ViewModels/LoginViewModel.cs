@@ -14,6 +14,12 @@ namespace ProjetoCondominioSmart.ViewModels
         }
 
         public DelegateCommand TestePageCommand => new DelegateCommand(async () => await OnTestePage());
+        public DelegateCommand ListaTestePageCommand => new DelegateCommand(async () => await OnListaTestePage());
+
+        private async Task OnListaTestePage()
+        {
+            await NavigationService.NavigateAsync("/ListaTestePage");
+        }
 
         private async Task OnTestePage()
         {

@@ -17,6 +17,11 @@
                 Text="Ir para TestePage"
                 Command="{Binding TestePageCommand}"
             />
+
+            <Button
+                Text="Ir para TestePage"
+                Command="{Binding ListaTestePageCommand}"
+            />
             
         </StackLayout>
     </ContentPage.Content>
