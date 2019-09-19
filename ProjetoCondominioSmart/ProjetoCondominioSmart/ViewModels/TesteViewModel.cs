@@ -22,7 +22,7 @@ namespace ProjetoCondominioSmart.ViewModels
                 if (_selectedIndex != value)
                 {
                     _selectedIndex = value;
-                    CrossLocalNotifications.Current.Show("title", "body", 1, DateTime.Now.AddSeconds(ListMinutes[_selectedIndex].IntMinutes));
+                   CrossLocalNotifications.Current.Show("Teste", "Mensagem teste", 101, DateTime.Now.AddSeconds(40));
                 }
                 SetProperty(ref _selectedIndex, value);
             }
@@ -35,6 +35,7 @@ namespace ProjetoCondominioSmart.ViewModels
         {
             ListMinutes = new ObservableCollection<Minutes>();
             OnGetMinutes();
+            SelectedIndex = 0;
         }
 
         private void OnGetMinutes()

@@ -9,19 +9,20 @@ namespace ProjetoCondominioSmart.Views
         public TestePage()
         {
             InitializeComponent();
+            picker.IsEnabled = false;
         }
 
 
         void OnToggled(object sender, ToggledEventArgs e)
         {
-            if (e.Value == false)
+            if (e.Value == true)
             {
-                picker.Unfocus();
-                picker.IsEnabled = false;
+                picker.Focus();
+                picker.IsEnabled = true;
             }
             else
             {
-                picker.Focus();
+                picker.Unfocus();
                 picker.IsEnabled = false;
             }
         }
