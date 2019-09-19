@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "810757431821",
+    "firebase_url": "https://projeto-condominio-smart-dev.firebaseio.com",
+    "project_id": "projeto-condominio-smart-dev",
+    "storage_bucket": "projeto-condominio-smart-dev.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:810757431821:android:8db6f75e3b40b4020eeb44",
+        "android_client_info": {
+          "package_name": "com.companyname.projetocondominiosmart"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "810757431821-5gf959pclpv1974v38b7o973nv56utbe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCSsej0Ha6bSKb9DcLfp91eHZCAxhl5czs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "810757431821-5gf959pclpv1974v38b7o973nv56utbe.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
