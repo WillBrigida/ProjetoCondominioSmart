@@ -1,4 +1,5 @@
-﻿using Plugin.LocalNotifications;
+﻿using Newtonsoft.Json;
+using Plugin.LocalNotifications;
 using Prism.Commands;
 using Prism.Navigation;
 using Prism.Services;
@@ -6,12 +7,20 @@ using ProjetoCondominioSmart.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Net;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace ProjetoCondominioSmart.ViewModels
 {
     public class TesteViewModel : BaseViewModel
     {
+        private const string URL = "https://onesignal.com/api/v1/notifications";
+        private const string APP_ID = "5bd3b9d2-1a0c-417d-89d1-3a3d9fb10cfc";
+        private const string REST_API_KEY = "NzNlN2FiOTgtODBjYS00ZmNjLWE2OTktMGYyYzJmMjJhNTI2";
+        private static HttpClient _client = new HttpClient();
 
         private int _selectedIndex = -1;
         public int SelectedIndex
@@ -22,12 +31,48 @@ namespace ProjetoCondominioSmart.ViewModels
                 if (_selectedIndex != value)
                 {
                     _selectedIndex = value;
-                   CrossLocalNotifications.Current.Show("Teste", "Mensagem teste", 101, DateTime.Now.AddSeconds(40));
+
+                     Agendamento(ListMinutes[_selectedIndex].IntMinutes, "Snooz", "Hora de Dormir");
                 }
                 SetProperty(ref _selectedIndex, value);
             }
         }
 
+        private async Task Agendamento(int intMinutes, string title, string message)
+        {
+            if (intMinutes == 0) return;
+
+           
+            _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", REST_API_KEY);
+
+            var agendamento = DateTime.Now.AddMinutes(intMinutes).ToString("yyyy-MM-dd HH:mm:00");
+
+          
+
+            Agenda post = new Agenda()
+            {
+                AppId = APP_ID,
+                Contents = new Contents { En = title },
+                Headings = new Contents { En = message },
+                IncludedSegments = new string[] { "All" },
+                SendAfter = agendamento + " GMT-0300",
+            };
+
+            try
+            {
+                var json = JsonConvert.SerializeObject(post);
+
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+                var request = await _client.PostAsync(URL, content);
+                var response = await request.Content.ReadAsStringAsync();
+
+            }
+            catch (Exception ex)
+            {
+                await PageDialogService.DisplayAlertAsync("Erro", ex.Message, "Ok");
+            }
+
+        }
 
         public ObservableCollection<Minutes> ListMinutes { get; set; }
         protected TesteViewModel(INavigationService navigationService, IPageDialogService pageDialogService) :

@@ -2,6 +2,7 @@
 using Android.Content.PM;
 using Android.OS;
 using Android.Runtime;
+using Com.OneSignal;
 using Plugin.LocalNotifications;
 
 namespace ProjetoCondominioSmart.Droid
@@ -16,6 +17,8 @@ namespace ProjetoCondominioSmart.Droid
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
+           
+
             LocalNotificationsImplementation.NotificationIconId = Resource.Drawable.notify_panel_notification_icon_bg;
 
             TabLayoutResource = Resource.Layout.Tabbar;

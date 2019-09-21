@@ -1,4 +1,5 @@
-﻿using Prism;
+﻿using Com.OneSignal;
+using Prism;
 using Prism.Ioc;
 
 namespace ProjetoCondominioSmart.Droid

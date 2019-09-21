@@ -1,4 +1,5 @@
-﻿using Prism;
+﻿using Com.OneSignal;
+using Prism;
 using Prism.DryIoc;
 using Prism.Ioc;
 using Prism.Plugin.Popups;
@@ -26,6 +27,9 @@ namespace ProjetoCondominioSmart
 #endif
 
             await NavigationService.NavigateAsync("LoginPage");
+
+            OneSignal.Current.StartInit("5bd3b9d2-1a0c-417d-89d1-3a3d9fb10cfc")
+                 .EndInit();
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
@@ -36,6 +40,7 @@ namespace ProjetoCondominioSmart
 
             containerRegistry.RegisterForNavigation<TestePage, TesteViewModel>();
             containerRegistry.RegisterForNavigation<TestePopupPage, TestePopupViewModel>();
+
         }
     }
 }
