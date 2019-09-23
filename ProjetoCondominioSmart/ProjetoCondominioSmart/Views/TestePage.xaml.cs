@@ -27,13 +27,13 @@ namespace ProjetoCondominioSmart.Views
             }
         }
 
-        protected override bool OnBackButtonPressed()
-        {
-            if (picker.IsFocused == true)
-            {
-                picker.Unfocus();
-            }
-            return false;
-        }
+        //protected override bool OnBackButtonPressed()
+        //{
+        //    if (picker.IsFocused == true)
+        //    {
+        //        picker.Unfocus();
+        //    }
+        //    return false;
+        //}
     }
 }

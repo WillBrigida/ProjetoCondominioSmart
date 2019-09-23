@@ -25,6 +25,12 @@ namespace ProjetoCondominioSmart.Models
 
         [JsonProperty("send_after")]
         public string SendAfter { get; set; }
+
+        [JsonProperty("delayed_option")]
+        public string DelayedOption { get; set; }
+
+        [JsonProperty("delivery_time_of_day")]
+        public string DeliveryTimeOfDay { get; set; }
     }
     public partial class Contents
     {

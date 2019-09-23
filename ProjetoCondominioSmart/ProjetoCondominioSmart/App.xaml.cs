@@ -26,7 +26,7 @@ namespace ProjetoCondominioSmart
             HotReloader.Current.Run(this);
 #endif
 
-            await NavigationService.NavigateAsync("LoginPage");
+            await NavigationService.NavigateAsync("TestePage");
 
             OneSignal.Current.StartInit("5bd3b9d2-1a0c-417d-89d1-3a3d9fb10cfc")
                  .EndInit();
