@@ -24,7 +24,7 @@ namespace ProjetoCondominioSmart
 #if DEBUG
             HotReloader.Current.Run(this);
 #endif
-            await NavigationService.NavigateAsync("LoginPage");
+            await NavigationService.NavigateAsync("TestePage");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)

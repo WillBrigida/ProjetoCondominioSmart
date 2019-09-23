@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using XFUtils.Effects;
@@ -16,19 +17,20 @@ namespace ProjetoCondominioSmart.Views
             ListViewListaPessoa.Effects.Add(eff);
         }
 
-        private void Eff_ScrollChanged(object sender, ScrollEventArgs args)
+        private  void Eff_ScrollChanged(object sender, ScrollEventArgs args)
         {
             Debug.WriteLine($" ====={args.Y}=====");
-            if (args.Y > 60)
+            if (args.Y >= 150)
             {
-                boxView.TranslateTo(0, -60, 100);
-                ListViewListaPessoa.TranslateTo(0, -60, 100);
+                boxView.TranslateTo(0, -100, 50);
+                ListViewListaPessoa.TranslateTo(0, -100, 50);
             }
-            else
+            if (args.Y < 140)
             {
                 boxView.TranslateTo(0, 0);
                 ListViewListaPessoa.TranslateTo(0, 0);
             }
+           
         }
     }
 }

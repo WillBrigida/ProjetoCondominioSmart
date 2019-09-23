@@ -8,11 +8,13 @@
     x:Class="ProjetoCondominioSmart.Views.ListaTestePage">
     
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout
+            Margin="0,0,0,-100"
+            >
             <BoxView
                 BackgroundColor="Accent"
                 x:Name="boxView"
-                HeightRequest="60"/>
+                HeightRequest="100"/>
             
             <ListView
                 x:Name="ListViewListaPessoa"
