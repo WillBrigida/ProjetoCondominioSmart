@@ -20,13 +20,14 @@ namespace ProjetoCondominioSmart
         }
 
         //background brush (Pincel?)
-        SKPaint backgrundColor = new SKPaint()
+        SKPaint backgrundColorRed = new SKPaint()
         {
             Style = SKPaintStyle.Fill, //preenchimento
             //Style = SKPaintStyle.Stroke, // borda
             //Style = SKPaintStyle.StrokeAndFill, // os dois
             Color = Color.Red.ToSKColor(),
         };
+
 
 
         private void SkiaCanvas_PaintSurface(object sender, SkiaSharp.Views.Forms.SKPaintSurfaceEventArgs e)
@@ -43,8 +44,8 @@ namespace ProjetoCondominioSmart
 
             //--> Desenhando um retangulo:
 
-            SKRect retangulo = new SKRect(0,0,info.Width, info.Height);
-            canvas.DrawRect(retangulo, backgrundColor);
+            //SKRect retangulo = new SKRect(0,0,info.Width, info.Height);
+            //canvas.DrawRect(retangulo, backgrundColor);
 
             //gradiente background
             //backgrundColor.Shader = SKShader.CreateLinearGradient(
@@ -60,6 +61,23 @@ namespace ProjetoCondominioSmart
             //SKRect retangulo = new SKRect(0, 0, info.Width, info.Height);
             //canvas.DrawRoundRect(retangulo, 20, 20, backgrundColor);
 
+            //canvas.DrawCircle(new SKPoint (0,0), 50, backgrundColorRed);
+            //canvas.DrawCircle(new SKPoint (0, Size.Height),50, backgrundColorRed);
+            //canvas.DrawCircle(new SKPoint( info.Height, info.Height),50, backgrundColorRed);
+            //canvas.DrawCircle(new SKPoint( info.Height, 0), 50, backgrundColorRed);
+
+            canvas.DrawCircle(new SKPoint(0, 0), 10, backgrundColorRed);
+            // Top right
+            canvas.DrawCircle(new SKPoint(info.Width, 0), 10, backgrundColorRed);
+            // Bottom left
+            canvas.DrawCircle(new SKPoint(0, info.Height), 10, backgrundColorRed);
+            // Bottom right
+            canvas.DrawCircle(new SKPoint(info.Width, info.Height), 10, backgrundColorRed);
+
+            var smallerSize = info.Width > info.Height ? info.Height : info.Width;
+            var centeredRect = new SKRect(0, 0, smallerSize, smallerSize);
+            centeredRect.Offset((info.Width - smallerSize) / 2, (info.Height - smallerSize) / 2);
+
         }
     }
-}
+} 
