@@ -14,18 +14,23 @@
   </PropertyGroup>
 
   <ItemGroup>
+<<<<<<< HEAD
     <PackageReference Include="Microsoft.AppCenter.Analytics" Version="2.1.1" />
     <PackageReference Include="Microsoft.AppCenter.Crashes" Version="2.1.1" />
     <PackageReference Include="Microsoft.AppCenter.Distribute" Version="2.1.1" />
+=======
+    <PackageReference Include="Com.OneSignal" Version="3.4.1" />
+    <PackageReference Include="Microsoft.AppCenter.Analytics" Version="2.1.1" />
+    <PackageReference Include="Microsoft.AppCenter.Crashes" Version="2.1.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+>>>>>>> master
     <PackageReference Include="Prism.DryIoc.Forms" Version="7.1.0.431" />
     <PackageReference Include="Prism.Plugin.Popups.DryIoc" Version="2.1.0.228" />
+    <PackageReference Include="Realm" Version="4.1.0" />
+    <PackageReference Include="Xam.Plugins.Notifier" Version="3.0.1" />
     <PackageReference Include="Xamarin.Forms" Version="4.2.0.778463" />
     <PackageReference Include="Xamarin.Essentials" Version="1.3.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Others\Services\" />
-    <Folder Include="Models\" />
+    <PackageReference Include="Xamarin.HotReload" Version="1.4.19" />
   </ItemGroup>
 
   <ItemGroup>

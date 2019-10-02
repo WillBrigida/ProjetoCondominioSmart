@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace ProjetoCondominioSmart.Views
@@ -15,6 +9,31 @@ namespace ProjetoCondominioSmart.Views
         public TestePage()
         {
             InitializeComponent();
+            picker.IsEnabled = false;
         }
+
+        void OnToggled(object sender, ToggledEventArgs e)
+        {
+            if (e.Value == true)
+            {
+                picker.Focus();
+                picker.IsEnabled = true;
+                picker.Unfocus();
+            }
+            else
+            {
+                picker.Unfocus();
+                picker.IsEnabled = false;
+            }
+        }
+
+        //protected override bool OnBackButtonPressed()
+        //{
+        //    if (picker.IsFocused == true)
+        //    {
+        //        picker.Unfocus();
+        //    }
+        //    return false;
+        //}
     }
 }
