@@ -4,9 +4,10 @@ using System.Text;
 
 namespace ProjetoCondominioSmart.Models
 {
-    public class Minutes
+    public class MinuteList
     {
-        public string StringMinutes { get; set; }
-        public int IntMinutes { get; set; }
+        public string StrMinute { get; set; }
+        public int IntMinute { get; set; }
     }
 }
+ 

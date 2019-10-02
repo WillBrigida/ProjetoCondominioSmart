@@ -1,17 +1,20 @@
-<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.will.projetocondominiosmart">
-  <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="28" />
-  <permission android:name="com.will.projetocondominiosmart.permission.C2D_MESSAGE"
-            android:protectionLevel="signature" />
-  <uses-permission android:name="com.will.projetocondominiosmart.permission.C2D_MESSAGE" />
-  <application android:label="ProjetoCondominioSmart.Android">
-    <receiver android:name="com.onesignal.GcmBroadcastReceiver"
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.will.projetocondominiosmart" android:installLocation="auto">
+	<uses-sdk android:minSdkVersion="21" android:targetSdkVersion="28" />
+	<permission android:name="com.will.projetocondominiosmart.permission.C2D_MESSAGE" android:protectionLevel="signature" />
+	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+	<uses-permission android:name="android.permission.WAKE_LOCK" />
+	<uses-permission android:name="com.will.projetocondominiosmart.permission.C2D_MESSAGE" />
+	<application android:label="ProjetoCondominioSmart.Android">
+		<receiver android:name="com.onesignal.GcmBroadcastReceiver"
            android:permission="com.google.android.c2dm.permission.SEND" >
       <intent-filter>
         <action android:name="com.google.android.c2dm.intent.RECEIVE" />
         <category android:name="com.will.projetocondominiosmart" />
       </intent-filter>
     </receiver>
+    <receiver android:name=".RebootReceive" android:enabled="true" android:exported="true" android:process=":remote" android:label="AlarmReceiver" />
   </application>
-  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.REBOOT" />
 </manifest>

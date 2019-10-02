@@ -24,10 +24,10 @@
 
                 <Picker
                     x:Name="picker"
-                    ItemsSource="{Binding ListMinutes, Mode=TwoWay}"
-                    SelectedItem="{Binding IntMinutes, Mode=TwoWay}"
+                    ItemsSource="{Binding Minutes, Mode=TwoWay}"
+                    SelectedItem="{Binding IntMinute, Mode=TwoWay}"
                     SelectedIndex="{Binding SelectedIndex, Mode=TwoWay}"
-                    ItemDisplayBinding="{Binding StringMinutes, Mode=TwoWay}" 
+                    ItemDisplayBinding="{Binding StrMinute, Mode=TwoWay}" 
                     HorizontalOptions="FillAndExpand"
                 />
                 <!--<Switch

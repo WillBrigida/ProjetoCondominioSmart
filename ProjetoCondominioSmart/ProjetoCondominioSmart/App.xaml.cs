@@ -39,20 +39,6 @@ namespace ProjetoCondominioSmart
                   typeof(Analytics), typeof(Crashes));
 
 
-            try
-            {
-                Crashes.GenerateTestCrash();
-            }
-            catch (System.Exception exception)
-            {
-
-                var properties = new Dictionary<string, string>
-                {
-                    { "Category", "Music" },
-                    { "Wifi", "On" }
-                };
-                Crashes.TrackError(exception, properties);
-            }
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
