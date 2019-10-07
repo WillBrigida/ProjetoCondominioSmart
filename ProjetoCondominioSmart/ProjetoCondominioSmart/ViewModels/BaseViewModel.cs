@@ -1,4 +1,5 @@
-﻿using Prism;
+﻿using MvvmHelpers;
+using Prism;
 using Prism.Mvvm;
 using Prism.Navigation;
 using Prism.Services;
@@ -6,7 +7,7 @@ using System;
 
 namespace ProjetoCondominioSmart.ViewModels
 {
-    public class BaseViewModel : BindableBase, INavigationAware, IDestructible, IActiveAware
+    public class BaseViewModel : ObservableObject, INavigationAware, IDestructible
     {
         protected INavigationService NavigationService { get; set; }
         protected IPageDialogService PageDialogService { get; set; }
@@ -88,12 +89,12 @@ namespace ProjetoCondominioSmart.ViewModels
             set => SetProperty(ref footer, value);
         }
 
-        private bool _isActive;
-        public bool IsActive
-        {
-            get => _isActive;
-            set => SetProperty(ref _isActive, value, RaiseIsActiveChanged);
-        }
+        //private bool _isActive;
+        //public bool IsActive
+        //{
+        //    get => _isActive;
+        //    set => SetProperty(ref _isActive, value, RaiseIsActiveChanged);
+        //}
 
         protected BaseViewModel(INavigationService navigationService, IPageDialogService pageDialogService)
         {

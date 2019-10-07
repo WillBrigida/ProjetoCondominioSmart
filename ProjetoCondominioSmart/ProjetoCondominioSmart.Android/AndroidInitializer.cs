@@ -1,6 +1,7 @@
 ﻿using Com.OneSignal;
 using Prism;
 using Prism.Ioc;
+using Prism.Plugin.Popups;
 
 namespace ProjetoCondominioSmart.Droid
 {
@@ -8,6 +9,7 @@ namespace ProjetoCondominioSmart.Droid
     {
         public void RegisterTypes(IContainerRegistry containerRegistry)
         {
+            containerRegistry.RegisterPopupNavigationService();
         }
     }
 }
