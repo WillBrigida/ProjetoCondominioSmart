@@ -10,8 +10,62 @@
     
     <ContentPage.Content>
     
-        <Grid>
-           
+        <Grid
+            ColumnSpacing="0"
+            RowSpacing="0"
+            Margin="10"
+            >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <BoxView
+                BackgroundColor="Aquamarine"/>
+
+            <BoxView
+                Grid.Row="1"
+                BackgroundColor="Yellow"/>
+
+            <StackLayout
+                Spacing="20"
+               VerticalOptions="Start"
+                Grid.Row="1">
+
+                <Entry
+                    FlexLayout.Basis="50"
+                    Visual="Material"
+                    VerticalOptions="CenterAndExpand"/>
+                <Entry
+                    VerticalOptions="Center"/>
+
+            </StackLayout>
+
+            <BoxView
+                Grid.Row="2"
+                BackgroundColor="RosyBrown"/>
+            
+            <StackLayout
+               VerticalOptions="EndAndExpand"
+                Grid.Row="2"
+                >
+                <Button
+                    Text="Google"
+                    Margin="10"
+                    HeightRequest="40"
+                    CornerRadius="25"
+                    Command="{Binding GoogleLoginCommand}"/>
+                
+                <Button
+                    Text="Facebook"
+                    Margin="10"
+                    HeightRequest="40"
+                    CornerRadius="25"
+                    Command="{Binding FacebookLoginCommand}"/>
+
+            </StackLayout>
+            
         </Grid>
        
     </ContentPage.Content>
